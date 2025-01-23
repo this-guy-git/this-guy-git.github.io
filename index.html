@@ -8,6 +8,9 @@
 </head>
 
 <body>
+<audio id="myAudio">
+	<source src="horse.mp3" type="audio/mpeg">
+</audio>
 <h1 align="center"><font face="Comic Sans MS">welcome to my awesome web
 page!!!!!!!!</font></h1>
 <p align="center"><font face="Comic Sans MS">
@@ -19,6 +22,18 @@ you right back to early 2000s!!</marquee>
 <marquee direction="right" scrolldelay="60" scrollamount="12" align="middle" width="596" height="23" bgcolor="#FFCC00">under
 construction!!!!!</marquee>
 </font></p>
+<a align="center" target="_blank" href='https://www.coolmathgames.com/0-papas-freezeria'>
+<button onclick="playAudio()" align="center" font face="Comic Sans MS">
+woah
+</button>
+</a>
+<script>
+var x = document.getElementById("myAudio");
+
+function playAudio() {
+	x.play()
+}
+</script>
 </body>
 
 </html>

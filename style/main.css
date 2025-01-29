@@ -1,0 +1,7 @@
+
+body {background-color: powderblue; font-family: "Comic Sans MS", "Comic Sans";}
+h1   {color: black font-family: "Comic Sans", "Comic Sans";}
+p    {color: black; font-family: "Comic Sans", "Comic Sans";}
+.button {
+	font-family: inherit;
+}

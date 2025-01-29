@@ -1,7 +1,19 @@
 
-body {background-color: powderblue; font-family: "Comic Sans MS", "Comic Sans";}
-h1   {color: black font-family: "Comic Sans", "Comic Sans";}
-p    {color: black; font-family: "Comic Sans", "Comic Sans";}
+body {
+  --light: hsl(220, 50%, 90%);
+  --primary: hsl(255, 30%, 55%);
+  --focus: hsl(210, 90%, 50%);
+  --border-color: hsla(0, 0%, 100%, .2);
+  --global-background: hsl(220, 25%, 10%);
+  --background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+  --shadow-1: hsla(236, 50%, 50%, .3);
+  --shadow-2: hsla(236, 50%, 50%, .4);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
+  color: var(--light);
+  background: var(--global-background);
+}
+
       
 .button {
   background: linear-gradient(to bottom right, #EF4765, #FF9A5A);

@@ -157,6 +157,9 @@ main {
         transition: --after-blur 0.3s ease;
       }
 
+      > a {
+      }
+
       > span {
         background: linear-gradient(
             to right,

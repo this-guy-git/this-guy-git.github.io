@@ -122,6 +122,7 @@ body {
   background: var(--body-bg);
   font-family: "Mona Sans", sans-serif;
   padding: 0 6em;
+  color: white;
 }
 
 main {

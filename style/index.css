@@ -1,0 +1,41 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Teko';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/teko-v20-latin-regular.woff2') format('woff2');
+  }
+
+
+
+body {
+    font-family: 'Teko';
+    font-size: x-large;
+    color: #e3e7e8;
+    background-color: #1c2833;
+}
+
+p {
+    font-family: inherit;
+    color: inherit;
+}
+
+.header {
+    font-size: 50px;
+	position: fixed;
+}
+
+.button {
+    font-family: 'Teko';
+    font-size: large;
+    background-color: #ffcb3d;
+    border-style: hidden;
+    color: #313131;
+    padding: 10px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.button:hover {opacity: 0.8;}

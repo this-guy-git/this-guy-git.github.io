@@ -39,3 +39,71 @@ p {
 }
 
 .button:hover {opacity: 0.8;}
+
+.rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 200%;
+    font-family: inherit;
+}
+.rainbow_text_animated {
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+   -webkit-background-clip: text;
+   background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+ background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.box {
+    display: flex;
+    padding: 12px;
+    height: 400px;
+    width: 1100px;
+    border: 5px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#1c2833, #1c2833) padding-box, linear-gradient(
+          var(--angle),
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          purple
+        ) border-box;
+    animation: 8s rotate linear infinite;
+  }
+  
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .link {
+    text-decoration: none;
+    font-size: larger;
+    cursor: pointer;
+    font-style: normal;
+  }
+  .link:hover {
+    font-style: italic;
+  } 
+  

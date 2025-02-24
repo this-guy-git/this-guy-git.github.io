@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style/index.css">
+        <title>test page</title>
+        <style>
+            .rainbow {
+                text-align: center;
+                text-decoration: underline;
+                font-size: 200%;
+                font-family: inherit;
+            }
+            .rainbow_text_animated {
+              background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+               -webkit-background-clip: text;
+               background-clip: text;
+              color: transparent;
+              animation: rainbow_animation 6s ease-in-out infinite;
+             background-size: 400% 100%;
+            }
+
+            @keyframes rainbow_animation {
+                0%,100% {
+                    background-position: 0 0;
+                }
+
+                50% {
+                    background-position: 100% 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header rainbow rainbow_text_animated">
+            <img src="..\images\thb.png" alt="tgL Logo" style="width: 50px;height: 50px;">
+            this guy Labs
+        </header>
+            <p class="rainbow rainbow_text_animated"><b>test</b></p>
+            <p style="color: red;">test</p>
+            <p style="color: orange;">test</p>
+            <p style="color: yellow;">test</p>
+            <p style="color: green;">test</p>
+            <p style="color: blue;">test</p>
+            <p style="color: indigo;">test</p>
+            <p style="color: violet;">test</p>
+            <p style="color: white;">test</p>
+            <p style="color: black;">test</p>
+    </body>
+</html>

@@ -1,144 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this guy Labs</title>
+    <meta name="description" content="this guy Labs - Doing great stuff.">
+    <meta name="keywords" content="software development, programming, linux, python, shellOS, guython, gpd, guython package">
+    <meta name="author" content="this guy Labs">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="this guy Labs">
+    <meta property="og:description" content="Doing great stuff.">
+    <meta property="og:url" content="https://thisguylabs.com">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style/index.css">
+    
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
 <body>
-
-    <head>
-        <title>this guy Labs</title>
-        <link rel="stylesheet" href=".\style\index.css">
-		<style>
-            .rainbow {
-                text-align: center;
-                text-decoration: underline;
-                font-size: 200%;
-                font-family: inherit;
-            }
-            .rainbow_text_animated {
-              background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
-               -webkit-background-clip: text;
-               background-clip: text;
-              color: transparent;
-              animation: rainbow_animation 6s ease-in-out infinite;
-             background-size: 400% 100%;
-            }
-
-            @keyframes rainbow_animation {
-                0%,100% {
-                    background-position: 0 0;
-                }
-
-                50% {
-                    background-position: 100% 0;
-                }
-            }
-            .link {
-                text-decoration: none;
-                font-size: larger;
-                cursor: pointer;
-                font-style: normal;
-            }
-            .link:hover {
-                font-style: italic;
-            } 
-        </style>
-    </head>
-    <header class="header" style="position: relative;">
-        <div style="text-align: center;">
-            <img src=".\images\thb.png" alt="tgL Logo" style="width: 50px;height: 50px;">
-            <b>this guy Labs</b>
-        </div>
-    </header>
-		<h1 class="rainbow rainbow_text_animated">Hi im this guy and I do stuff...</h1>
-		<p style="text-align: center;">Alot of stuff... Like this website; which took me forever to actually make. </p>
-		<a href="/projects/" target="_blank">
-            <button class="button-85" style="display: block;text-decoration: none;margin: 0 auto;" role="button">Projects</button>
-        </a>
-    <h1 class="rainbow rainbow_text_animated">Notable Projects</h1>
-        <p style="text-align: center;">I've worked on quite a few things... but here are the ones worth noting.</p>
-        <div class="box" style>
-            <h1>ShellOS Linux</h1>
-            <p style="margin-top: 90px;margin-left: -185px;">&#8627</p>
-            <p style="margin-top: 90px;margin-left: 2px;">ShellOS Linux is a fork of <a href="https://github.com/Crypticsoft-Corp/ShellOS" class="rainbow rainbow_text_animated link" target="_blank">Shell OS</a>, made by me; <a href="https://github.com/this-guy-git/" class="rainbow rainbow_text_animated link" target="_blank"> this guy</a>, made to work on Linux! 
-                <br> So far tested on 
-                <a href="https://archlinux.org/" class="rainbow rainbow_text_animated link" target="_blank">Arch</a>, 
-                <a href="https://ubuntu.com/" class="rainbow rainbow_text_animated link" target="_blank">Ubuntu</a>, and
-                <a href="https://www.debian.org/" class="rainbow rainbow_text_animated link" target="_blank"> Debian</a>!</p>
-            <a href="https://github.com/this-guy-git/ShellOS-Linux/releases/" target="_blank">
-                <button class="button-85" style="margin-top: 250px;display: block;margin-left: -570px;">Download Linux Release</button>
-            </a>
-                <a href="https://github.com/Crypticsoft-Corp/ShellOS/releases" target="_blank">
-                    <button class="button-85" style="margin-top: 250px;display: block;margin-left: -360px;">Download Windows Releases</button>
-                </a>
-        </div>
-        <br>
-        <div class="box">
-            <h1>Guython</h1>
-            <p style="margin-top: 90px;margin-left: -110px;">&#8627</p>
-            <p style="margin-top: 90px;margin-left: 2px;">Guython is a programming language similar to and made in <a href="https://www.python.org/" class="rainbow rainbow_text_animated link" target="_blank">Python</a>.
-                <br> So far tested on 
-                <a href="https://www.microsoft.com/en-us/software-download/windows10" class="rainbow rainbow_text_animated link" target="_blank">Windows 10</a> and 
-                <a href="https://www.android.com/" class="rainbow rainbow_text_animated link" target="_blank">Android</a> (using <a href="https://termux.dev/en/" class="rainbow rainbow_text_animated link" target="_blank">Termux</a>)
-            <a href="https://github.com/this-guy-git/Guython/releases/" target="_blank">
-                <button class="button-85" style="margin-top: 100px;display: block;margin-left: 0;">Download</button>
-            </a>
-        </div>
-        <br>
-        <div class="box">
-            <h1>Guython Package Database</h1>
-            <p style="margin-top: 90px;margin-left: -380px;">&#8627</p>
-            <p style="margin-top: 90px;margin-left: 2px;">Guython Package Database or GPD is a package manager similar to <a href="https://www.python.org/" class="rainbow rainbow_text_animated link" target="_blank">Python</a>'s <a href="https://pypi.org/project/pip/" class="rainbow rainbow_text_animated link" target="_blank">PIP</a>
-                <br> So far tested on 
-                <a href="https://www.microsoft.com/en-us/software-download/windows10" class="rainbow rainbow_text_animated link" target="_blank">Windows 10</a> with Guython v1.2 and above.
-            <a href="https://github.com/this-guy-git/guython-packages" target="_blank">
-                <button class="button-85" style="margin-top: 100px;display: block;margin-left: 0;">Add your Package</button>
-            </a>
-        </div>
-        <h1 class="rainbow rainbow_text_animated">Get in contact?</h1>
-        <p style="text-align: center;">Get in contact with me from <a class="rainbow rainbow_text_animated link" style="font-size: 30px;" href="mailto:thisguylabs@gmail.com">thisguylabs@gmail.com</a>, <a class="rainbow rainbow_text_animated link" style="font-size: 30px;" href="mailto:thisguy@thisguylabs.com">thisguy@thisguylabs.com</a> or <a class="rainbow rainbow_text_animated link" style="font-size: 30px;" href="https://discord.com/users/709488328805843045">Discord</a>.</p>
-
-        <div class="dashboard-footer">
-        <div class="footer-pattern"></div>
-        <div class="footer-content">
-            <div class="footer-col">
-                <div class="company-info">
-                    <div class="company-logo">tgL</div>
-                    <div class="company-name">this guy Labs</div>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1>this guy Labs</h1>
+            <p class="subtitle">Developer & Creator</p>
+        </header>
+        
+        <section class="intro">
+            <p>Hi, I'm <b>this guy</b> and I do stuff.</p>
+            <a class="btn btn-primary" href="https://thisguylabs.com/projects">Projects</a>
+        </section>
+        
+        <section class="projects">
+            <div class="project-card">
+                <h3 class="project-title">ShellOS Linux</h3>
+                <p class="project-description">
+                    A Linux fork of ShellOS.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Linux</span>
+                    <span class="status-tag status-active">✓ Active</span>
                 </div>
-                <p class="footer-text">Creating and innovating since 2023!</p>
-                <div class="footer-links">
-                    <a href="https://github.com/this-guy-git/" class="footer-link">Github</a>
-                    <a href="mailto:thisguylabs@gmail.com" class="footer-link">Personal Email</a>
-                    <a href="mailto:thisguy@thisguylabs.com" class="footer-link">Business Email</a>
-                    <a href="https://discord.com/users/709488328805843045" class="footer-link">Discord</a>
-                </div>
-            </div>
-            <div class="footer-col">
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="copyright-text">
-                © 2025 this guy Labs. All rights reserved.
-            </div>
-            <div class="dropdown" id="language-dropdown">
-                <div class="dropdown-toggle">
-                    <span>English (US)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">English (US)</a>
+                <div class="project-links">
+                    <a href="https://github.com/this-guy-git/" class="btn btn-primary">View on GitHub</a>
+                    <a href="https://github.com/this-guy-git/" class="btn btn-secondary">View Original</a>
+                    <span class="tech-tag">✓ Arch</span>
+                    <span class="tech-tag">✓ Ubuntu</span>
+                    <span class="tech-tag">✓ Debian</span>
+                    <span class="tech-tag">✓ Windows</span>
                 </div>
             </div>
             
-
-    <script>
+            <div class="project-card">
+                <h3 class="project-title">Guython</h3>
+                <p class="project-description">
+                    A custom programming language built with Python, inspired by Python.
+                    Cross-platform compatibility ensures it works on both desktop and mobile environments.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Language Design</span>
+                    <span class="tech-tag">Cross-platform</span>
+                    <span class="status-tag status-active">✓ Active</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/this-guy-git/Guython/releases/" class="btn btn-primary">Download</a>
+                    <a href="https://github.com/this-guy-git/Guython" class="btn btn-secondary">Source Code</a>
+                    <span class="tech-tag">✓ Linux</span>
+                    <span class="tech-tag">✓ MacOS</span>
+                    <span class="tech-tag">✓ Windows</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3 class="project-title">Guython Package Database (GPD)</h3>
+                <p class="project-description">
+                    A comprehensive package manager for Guython, inspired by Python's PIP.
+                    Seamlessly integrates with Guython v1.2 and above.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Package Management</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">CLI Tools</span>
+                    <span class="status-tag status-active">✓ Active</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/this-guy-git/guython-packages" class="btn btn-primary">Browse Packages</a>
+                    <a href="https://github.com/this-guy-git/" class="btn btn-secondary">Documentation</a>
+                    <span class="tech-tag">✓ Guython v1.2</span>
+                </div>
+            </div>
+        </section>
         
-        // Add ripple effect to links
-        document.querySelectorAll('.footer-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transition = 'color 0.3s ease';
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    this guy Labs
+                </div>
+                
+                <div class="footer-social">
+                    <a href="mailto:thisguy@thisguylabs.com" class="social-link" title="Business Email">
+                        <img src="/images/gmail.jpg" style="max-width: 30px; border-radius: 8px;">
+                    </a>
+                    <a href="https://discord.com/users/709488328805843045" class="social-link" title="Discord">
+                        <img src="/images/discord.jpeg" style="max-width: 30px; border-radius: 8px;">
+                    </a>
+                    <a href="https://github.com/this-guy-git/" class="social-link" title="GitHub">
+                        <img src="/images/github/github-mark/github-mark-white.png" style="max-width: 30px; border-radius: 8px;">
+                    </a>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 this guy Labs.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add loading states to external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.opacity = '0.7';
+                setTimeout(() => this.style.opacity = '1', 500);
             });
         });
     </script>
-
-    </body>
+</body>
 </html>

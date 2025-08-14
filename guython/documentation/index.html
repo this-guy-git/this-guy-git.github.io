@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guython Documentation</title>
+    <meta name="description" content="Official documentation for the Guython programming language. Learn commands, syntax, and package management.">
+    <meta name="keywords" content="guython, programming language, docs, syntax, commands, gpd">
+    <meta name="author" content="This Guy Labs">
+    <link rel="stylesheet" href="../index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Guython</a>
+            <ul class="nav-links">
+                <li><a href="../" class="nav-link">Home</a></li>
+                <li><a href="../download/" class="nav-link">Download</a></li>
+                <li><a href="." class="nav-link active">Documentation</a></li>
+                <li><a href="https://thisguylabs.com/" class="nav-link">this guy Labs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Guython Documentation</h1>
+            <p class="hero-subtitle">Your complete reference for the Guython language</p>
+            <p class="hero-description">
+                Comprehensive documentation covering all commands, syntax, and features of Guython. 
+                Whether you're getting started or looking for advanced techniques, this guide has you covered.
+            </p>
+            <a class="btn btn-primary" href="https://raw.githubusercontent.com/this-guy-git/Guython/refs/heads/main/Grammar.txt">Download full Documentation</a>
+        </div>
+    </section>
+
+    <!-- Basics Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Language Basics</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Version</h3>
+                    <p class="feature-description"><code>ver</code> — Shows the current Guython version.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Exit</h3>
+                    <p class="feature-description"><code>exit</code> — Exits the console.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Variables</h3>
+                    <p class="feature-description"><code>var</code> — Lists all currently declared variables.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Debug Mode</h3>
+                    <p class="feature-description"><code>debug</code> — Enters debug mode.</p>
+                </div>
+            </div>
+            
+            <div class="code-section">
+                <div class="code-title">📝 Syntax Examples</div>
+                <div class="code-block">
+<pre class="code-content">
+<span class="comment">{ This is a comment in Guython }</span>
+<span class="keyword"></span>name = <span class="string">"Guython"</span>  <span class="comment">{ Variable declaration }</span>
+<span class="function">print</span><span class="string">"Hello"</span>,name  <span class="comment">{ Output: Hello Guython }</span>
+
+<span class="comment">{ Conditional logic }</span>
+<span class="keyword">if</span>x,>,5.
+.<span class="function">print</span><span class="string">"x is greater than 5"</span>
+
+<span class="keyword">else</span>
+.<span class="function">print</span><span class="string">"x is 5 or less"</span>
+</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Commands -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Core Commands</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">print</h3>
+                    <p class="feature-description">Outputs text or variables. Syntax: <code>print"str"</code> or <code>print variable</code>.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">print</span><span class="string">"Hello World"</span>  <span class="comment">{ No space needed }</span>
+<span class="function">print</span> x, y  <span class="comment">{ Adds space between }</span>
+<span class="function">print</span><span class="string">"Value:"</span>x  <span class="comment">{ No space added }</span>
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">input</h3>
+                    <p class="feature-description">Captures user input. Stores or prints directly.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+name = <span class="function">input</span>  <span class="comment">{ Stores input }</span>
+<span class="function">printinput</span>  <span class="comment">{ Prints input directly }</span>
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">import</h3>
+                    <p class="feature-description">Imports variables from other Guython files.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="keyword">import</span>utils.gy
+<span class="function">print</span> utils.version
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">alias</h3>
+                    <p class="feature-description">Creates command shortcuts.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="keyword">alias</span> <span class="function">print</span> = p
+p<span class="string">"This works!"</span>
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Flow -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Control Flow</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">if/else</h3>
+                    <p class="feature-description">Conditional execution with dot indentation.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="keyword">if</span>x,>,10.
+.<span class="function">print</span><span class="string">"Big"</span>
+
+<span class="keyword">else</span>
+.<span class="function">print</span><span class="string">"Small"</span>
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">while</h3>
+                    <p class="feature-description">Loop while condition is true.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+x = 0
+<span class="keyword">while</span>x,<,5.
+.<span class="function">print</span> x
+.x = x+1
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">goto</h3>
+                    <p class="feature-description">Jumps to specific line number.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">print</span><span class="string">"Line 1"</span>
+<span class="keyword">goto</span>3
+<span class="function">print</span><span class="string">"Line 2"</span>  <span class="comment">{ Skipped }</span>
+<span class="function">print</span><span class="string">"Line 3"</span>
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">eval</h3>
+                    <p class="feature-description">Executes dynamic code.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+code = <span class="string">"5 + 5"</span>
+result = <span class="function">eval</span> code
+<span class="function">print</span> result  <span class="comment">{ 10 }</span>
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUI Commands -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">GUI Functions</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">createWindow</h3>
+                    <p class="feature-description">Creates a GUI window.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">createWindow</span> <span class="string">"My App"</span> 800 600
+<span class="function">setWindowColor</span> <span class="string">"#1a1a1a"</span>
+<span class="function">waitGui</span>
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">createButton</h3>
+                    <p class="feature-description">Creates a clickable button.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="keyword">def</span>sayHello_
+.<span class="function">print</span><span class="string">"Hello!"</span>
+
+<span class="function">createButton</span> <span class="string">"Click Me"</span> 50 50 100 30 sayHello_
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">createEntry</h3>
+                    <p class="feature-description">Creates an input field.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">createEntry</span> 50 100 200 30 <span class="string">"Enter text"</span>
+<span class="function">createButton</span> <span class="string">"Submit"</span> 50 150 100 30 submit_
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">showMessage</h3>
+                    <p class="feature-description">Displays message boxes.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">showMessage</span> <span class="string">"Alert"</span> <span class="string">"Operation complete!"</span> info
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File & Process Commands -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">File Operations</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">read</h3>
+                    <p class="feature-description">Reads files with modifiers.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">read</span> <span class="string">"/path/to/file.txt"</span> -lines
+<span class="function">read</span> <span class="string">"config.gy"</span> -ign
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">write</h3>
+                    <p class="feature-description">Writes to files with modifiers.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">write</span> <span class="string">"log.txt"</span> <span class="string">"New entry"</span> -add
+<span class="function">write</span> <span class="string">"newfile.txt"</span> <span class="string">"Content"</span> -create
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">ngi</h3>
+                    <p class="feature-description">New Guython instance.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">ngi</span> -s <span class="string">"print'Running in new instance'"</span>
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">guython</h3>
+                    <p class="feature-description">Runs Guython scripts.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">guython</span> script.gy
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GPD Commands -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Package Management (GPD)</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">gpd pkgs</h3>
+                    <p class="feature-description">Lists all available packages.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">gpd</span> pkgs
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">gpd install</h3>
+                    <p class="feature-description">Installs packages.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">gpd</span> install requests
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">gpd import</h3>
+                    <p class="feature-description">Imports installed packages.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">gpd</span> import requests
+</pre>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">gpd update</h3>
+                    <p class="feature-description">Updates packages.</p>
+                    <div class="code-block" style="margin-top: 1rem; font-size: 0.9rem;">
+<pre class="code-content">
+<span class="function">gpd</span> update requests
+</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-section" style="margin-top: 2rem;">
+                <div class="code-title">📦 Package Management Example</div>
+                <div class="code-block">
+<pre class="code-content">
+<span class="comment">{ Install and use a package }</span>
+<span class="function">gpd</span> install text
+<span class="function">gpd</span> import text
+
+<span class="comment">{ Use the package }</span>
+response = string.strip(<span class="string">"hello!"</span>, <span class="string">"!"</span>)
+<span class="function">print</span> response
+</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    Guython
+                </div>
+                
+                <nav class="footer-links">
+                    <a href="https://thisguylabs.com/" class="footer-link">
+                        🏠 this guy Labs
+                    </a>
+                    <a href="https://thisguylabs.com/projects/" class="footer-link">
+                        🚀 All Projects
+                    </a>
+                    <a href="../documentation/" class="footer-link">
+                        📚 Documentation
+                    </a>
+                    <a href="https://github.com/this-guy-git/guython-packages" class="footer-link">
+                        🗃️ Package Database
+                    </a>
+                    <a href="mailto:thisguylabs@gmail.com" class="footer-link">
+                        📧 Contact
+                    </a>
+                </nav>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 this guy Labs. Guython - The Enhanced Python Experience.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Programming Language</title>
+    <meta name="description" content="Lumen - A compiled, fast, and lightweight programming language that bridges Python's readability with C-style power.">
+    <meta name="keywords" content="lumen, programming language, compiled, fast, lightweight, python-like, c-style">
+    <meta name="author" content="this guy Labs">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lumen Programming Language">
+    <meta property="og:description" content="A compiled, fast, and lightweight programming language that bridges Python's readability with C-style power.">
+    <meta property="og:url" content="https://thisguylabs.com/lumen/">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="lumen-logo">
+                <svg width="120" height="120" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="400" fill="#f1c40f" rx="50"/>
+                  <path d="M50 5C31.711 5 17 20.389 17 39c0 6.606 1.793 13.004 5.313 18.594v.031C26.177 63.635 31.71 68.069 34 72.813l-.031 14.25C33.957 91.213 36.83 95 41 95h18c4.224 0 7-3.89 7-8V72.813c2.29-4.744 7.823-9.178 11.688-15.188v-.031C81.208 52.004 83 45.606 83 39 83 20.389 68.289 5 50 5m0 6c14.926 0 27 12.533 27 28 0 5.526-1.476 10.762-4.375 15.375-.004.007.004.025 0 .031-2.851 4.421-8.25 8.615-11.5 14.594H53V54.969a8 8 0 0 0 2 .281c4.383 0 8-3.617 8-8s-3.617-8-8-8c-1.886 0-3.625.67-5 1.781a7.93 7.93 0 0 0-5-1.781c-4.383 0-8 3.617-8 8s3.617 8 8 8c.691 0 1.358-.112 2-.281V69h-8.125c-3.25-5.98-8.649-10.173-11.5-14.594-.005-.008.005-.023 0-.031C24.476 49.762 23 44.526 23 39c0-15.467 12.074-28 27-28m-5 34.25c1.14 0 2 .86 2 2s-.86 2-2 2-2-.86-2-2 .86-2 2-2m10 0c1.14 0 2 .86 2 2s-.86 2-2 2-2-.86-2-2 .86-2 2-2M40 75h20v12c0 1.43-.935 2-1 2H41c-.12 0-1.035-.549-1.031-1.937z" fill="#111" transform="scale(2) translate(50, 40)"/>
+                  <text x="200" y="320" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" text-anchor="middle">lumen</text>
+                </svg>
+            </div>
+            <h1>Lumen</h1>
+            <p class="subtitle">A compiled, fast, and lightweight programming language that bridges Python's readability with C-style power.</p>
+        </header>
+        
+        <nav class="nav">
+            <div class="btn-group">
+                <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                <a href="#documentation" class="btn btn-secondary">Documentation</a>
+                <a href="https://github.com/this-guy-git/lumen" class="btn btn-secondary">GitHub</a>
+                <a href="" class="btn btn-secondary">Learn Lumen</a>
+            </div>
+        </nav>
+        
+        <section class="hero-section" id="getting-started">
+            <div class="hero-content">
+                <h2 class="section-title">Get Started with Lumen</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Write your first Lumen program and experience the perfect balance of simplicity and power.
+                </p>
+                
+                <div class="code-example">
+<pre><code>
+<span class="keyword">fun</span> <span class="function">greet</span>(name) {
+  <span class="function">print</span> <span class="string">"Hello,"</span>, name;
+};
+
+<span class="function">greet</span>(<span class="string">"Lumen"</span>);</code></pre>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Compile and run:</p>
+                    <div class="code-example" style="background: var(--bg-primary); margin: 0;">
+                        <pre style="color: var(--accent);"><code>$ lumen hello.lmn -p -c
+$ .\dist\hello.exe
+Hello, Lumen!</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features-grid">
+            <div class="feature-card" style="animation-delay: 0.1s;">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Compiled Performance</h3>
+                <p class="feature-description">
+                    Lumen compiles to efficient native code, delivering high performance for your applications without sacrificing development speed.
+                </p>
+            </div>
+            
+            <div class="feature-card" style="animation-delay: 0.2s;">
+                <div class="feature-icon">📖</div>
+                <h3 class="feature-title">Readable Syntax</h3>
+                <p class="feature-description">
+                    Enjoy Python-like readability with familiar syntax that makes code easy to write, understand, and maintain.
+                </p>
+            </div>
+            
+            <div class="feature-card" style="animation-delay: 0.3s;">
+                <div class="feature-icon">🎓</div>
+                <h3 class="feature-title">Learning Friendly</h3>
+                <p class="feature-description">
+                    Perfect for beginners and intermediates, teaching essential C/C++/C# concepts while remaining approachable.
+                </p>
+            </div>
+            
+            <div class="feature-card" style="animation-delay: 0.4s;">
+                <div class="feature-icon">🔧</div>
+                <div class="feature-title">Rich Type System</div>
+                <p class="feature-description">
+                    Support for integers, strings, booleans, arrays, dictionaries, and dynamic variables with static typing options.
+                </p>
+            </div>
+            
+            <div class="feature-card" style="animation-delay: 0.5s;">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">Built-in Libraries</h3>
+                <p class="feature-description">
+                    Comprehensive standard library including REGEX, RANDOM, OS, STDIO, MATH, INFO, and DATE modules.
+                </p>
+            </div>
+            
+            <div class="feature-card" style="animation-delay: 0.6s;">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Lightweight</h3>
+                <p class="feature-description">
+                    Minimal runtime overhead and fast compilation times make Lumen ideal for both development and production.
+                </p>
+            </div>
+        </section>
+        
+        <section class="documentation-section" id="documentation">
+            <h2 class="section-title">Documentation</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.1rem;">
+                Everything you need to master Lumen programming
+            </p>
+            
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h4>🔤 Variables & Types</h4>
+                    <p>Learn about Lumen's type system: int, str, bool, var, static, arrays, and dictionaries.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>🔧 Functions</h4>
+                    <p>Define reusable code blocks with parameters and modularize your programs effectively.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>🔀 Control Flow</h4>
+                    <p>Master conditional statements, loops, and goto statements for program control.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>📖 Libraries</h4>
+                    <p>Explore built-in libraries: REGEX, RANDOM, OS, STDIO, MATH, INFO, and DATE.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>🎯 REGEX Library</h4>
+                    <p>Pattern matching with search, findall, split, and substitution functions.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>🎲 RANDOM Library</h4>
+                    <p>Generate random numbers, choose elements, and shuffle collections.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>💻 OS Library</h4>
+                    <p>Interact with the operating system: directories, files, and path operations.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>📄 STDIO Library</h4>
+                    <p>Handle input/output operations, file reading/writing, and user interaction.</p>
+                </div>
+                
+                <div class="doc-card">
+                    <h4>🔢 MATH Library</h4>
+                    <p>Mathematical functions including trigonometry, square roots, and factorials.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://github.com/The-Lumen-Project/Lumen/blob/main/docs.md" class="btn btn-primary">View Full Documentation</a>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    Lumen
+                </div>
+                
+                <div class="footer-social">
+                    <a href="mailto:thisguy@thisguylabs.com" class="social-link" title="Business Email">
+                        <img src="/images/gmail.jpg" style="max-width: 30px; border-radius: 8px;">
+                    </a>
+                    <a href="https://discord.com/users/709488328805843045" class="social-link" title="Discord">
+                        <img src="/images/discord.jpeg" style="max-width: 30px; border-radius: 8px;">
+                    </a>
+                    <a href="https://github.com/this-guy-git/Lumen/" class="social-link" title="GitHub">
+                        <img src="/images/github/github-mark/github-mark-white.png" style="max-width: 30px; border-radius: 8px;">
+                    </a>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 this guy Labs.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.scroll-indicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+        
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add loading states to external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.opacity = '0.7';
+                setTimeout(() => this.style.opacity = '1', 500);
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.feature-card, .hero-section, .documentation-section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -143,7 +143,7 @@
                 <div class="code-block">
                     <div class="code-content">
                         <pre>
-# Download and install Guython
+# Download and install Guython (CMD Prompt)
 powershell -Command "$r=Invoke-RestMethod -Uri 'https://api.github.com/repos/this-guy-git/Guython/releases/latest' -Headers @{ 'User-Agent'='PS' }; $exe=$r.assets | Where-Object { $_.name -like '*.exe' }; Invoke-WebRequest $exe.browser_download_url -OutFile $exe.name; Start-Process $exe.name"
                             </pre>
                     </div>
@@ -285,12 +285,12 @@ gpd pkgs
                 
                 <nav class="footer-links">
                     <a href="https://thisguylabs.com/" class="footer-link">
-                        🏠 This Guy Labs
+                        🏠 this guy Labs
                     </a>
                     <a href="https://thisguylabs.com/projects/" class="footer-link">
                         🚀 All Projects
                     </a>
-                    <a href="../docs/" class="footer-link">
+                    <a href="../documentation/" class="footer-link">
                         📚 Documentation
                     </a>
                     <a href="https://github.com/this-guy-git/guython-packages" class="footer-link">
@@ -302,7 +302,7 @@ gpd pkgs
                 </nav>
                 
                 <div class="footer-bottom">
-                    <p>&copy; 2025 This Guy Labs. Guython - The Enhanced Python Experience.</p>
+                    <p>&copy; 2025 this guy Labs. Guython - The Enhanced Python Experience.</p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,11 @@
+﻿1, Arduino Uno R3
+3, Pushbuttons
+3, 1 kΩ Resistor
+1, LCD 16 x 2
+1, 100 kΩ Resistor
+1, 18 kΩ Resistor
+1, 220 Ω Resistor
+1, 100 Ω Resistor
+1 pMOS Transistor (MOSFET)
+1, 10 kΩ Resistor
+2, Diode

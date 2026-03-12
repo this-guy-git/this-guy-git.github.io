@@ -1,0 +1,27 @@
+{
+  "readme.md": "readme.html",
+  "setup": {
+    "overview.html": "setup/overview.html",
+    "setup.html": "setup/setup.html"
+  },
+  "build": {
+    "build.html": "build/build.html",
+    "lcd.html": "build/lcd.html",
+    "voltage.html": "build/voltage.html",
+    "resistance.html": "build/resistance.html",
+    "continuity.html": "build/continuity.html",
+    "code.html": "build/code.html"
+  },
+  "conclusion": {
+    "testing.html": "conclusion/testing.html"
+  },
+  "schematics": {
+    "tinkercad.png": "schematics/tinkercad.png",
+    "bom.txt": "schematics/bom.txt",
+    "code.cpp": "schematics/code.cpp",
+    "continuity.png": "schematics/continuity.png",
+    "voltage.png": "schematics/voltage.png",
+    "resistance.png": "schematics/resistance.png"
+  },
+  "addons": {}
+}

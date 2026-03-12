@@ -1,0 +1,278 @@
+<div style="color: #d4d4d4; text-align: left; padding: 20px;">
+
+  <h1 style="color: #00ffcc;">Now your circuit should look like this:</h1>
+    <a style="cursor: zoom-in;" target="_blank" href="pages/schematics/Tinkercad.png">
+      <img style="max-width: 90%; height: auto;" src="pages/schematics/Tinkercad.png">
+    </a>
+  <h1 style="color: #00ffcc;">Test LCD</h1>
+
+  <p>Upload this to your Arduino to make sure the LCD works before adding other functionality:</p>
+
+  <pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2); // RS, E, D4-D7
+
+void setup() {
+  lcd.begin(16, 2);
+  lcd.print("Hello World!");
+}
+
+void loop() {
+  lcd.setCursor(0,1);
+  lcd.print(millis() / 1000);
+}
+  </pre>
+
+  <p>Check that the LCD displays text and updates the timer on the second line.</p>
+</div>
+<div style="color: #d4d4d4; text-align: left; padding: 20px;">
+
+  <h1 style="color: #00ffcc;">Test Voltmeter Mode</h1>
+
+  <pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);
+}
+
+void loop() {
+  int voltageraw = analogRead(A0);
+  float vlt = voltageraw * (5.0 / 1023.0) * (118.0 / 18.0) + 1.0;
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("VOLTAGE:");
+  lcd.setCursor(0,1);
+  if (vlt < 31.0) lcd.print((int)vlt + "V");
+  else lcd.print("TOO HIGH");
+  delay(1000);
+}
+  </pre>
+
+  <p>Connect a voltage source to the input and watch the LCD display the voltage. ⚠️ Do not reverse polarity.</p>
+</div>
+<div style="color: #d4d4d4; text-align: left; padding: 20px;">
+
+  <h1 style="color: #00ffcc;">Test Resistance Mode</h1>
+
+  <pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+const float R1 = 100.0;
+
+void setup() {
+  lcd.begin(16, 2);
+}
+
+void loop() {
+  long sum = 0;
+  for(int i=0;i<10;i++) sum += analogRead(A5);
+  int rRaw = sum / 10;
+  float R2 = ((R1 * (1023.0 / rRaw - 1.0) - 15.0) / 1.1437);
+
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("RESISTANCE:");
+  lcd.setCursor(0,1);
+  lcd.print((int)R2 + " Ohms");
+  delay(1000);
+}
+  </pre>
+
+  <p>Connect a resistor to the measurement pins and confirm the LCD shows the correct value.</p>
+</div>
+<div style="color: #d4d4d4; text-align: left; padding: 20px;">
+
+  <h1 style="color: #00ffcc;">Test Continuity Mode</h1>
+
+  <pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);
+  pinMode(9, INPUT_PULLUP);
+}
+
+void loop() {
+  int connected = digitalRead(9);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("CONTINUITY");
+  lcd.setCursor(0,1);
+  lcd.print(connected == LOW ? "CONNECTED" : "OPEN");
+  delay(1000);
+}
+  </pre>
+
+  <p>Short the test pins to see "CONNECTED" on the LCD; leave open to see "OPEN".</p>
+</div>
+
+<div style="color: #d4d4d4; text-align: left; padding: 20px;">
+
+  <h1 style="color: #00ffcc;">Multimeter Code</h1>
+
+  <p>
+    This is the Arduino code for the multimeter. Each section can be tested separately using the buttons. 
+    Make sure to connect the LCD and input pins as shown in the schematics before uploading.
+  </p>
+
+  <h2>Full Code</h2>
+  <p>Copy this into the Arduino IDE and upload to your board:</p>
+
+  <pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+// LCD
+const int rs = 7, en = 6, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+
+// Voltmeter
+int voltageraw = 0;
+float vlt = 0;
+String value = "";
+String label = "";
+// Resistance
+int rRaw = 0;
+float Vout = 0;
+float R1 = 100.0;
+float R2 = 0;
+float buffer = 0;
+// Set mode 
+/* 
+ - 0 = Voltmeter 
+ - 1 = Continuity 
+ - 2 = Resistance 
+*/ 
+int mode = -1; 
+// Setup Screen 
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7); 
+ 
+void setup() 
+{ 
+  // Digital Pins 
+  pinMode(13, INPUT); 
+  pinMode(12, INPUT); 
+  pinMode(11, INPUT); 
+  pinMode(10, INPUT); 
+  pinMode(9, INPUT_PULLUP); 
+  pinMode(8, OUTPUT); 
+  // Analog Pins 
+  pinMode(A0, INPUT); 
+  pinMode(A5, INPUT); 
+  // Serial Output 
+  Serial.begin(9600); 
+   
+  lcd.begin(16, 2); 
+} 
+ 
+void loop() 
+{ 
+  if (digitalRead(13) == HIGH) { 
+    digitalWrite(8, HIGH); 
+    mode = 0; 
+  } else if (digitalRead(12) == HIGH){ 
+    digitalWrite(8, LOW); 
+    mode = 1; 
+  } else if (digitalRead(11) == HIGH) { 
+    digitalWrite(8, HIGH); 
+    mode = 2; 
+  } 
+  switch (mode) { 
+    case 0: // voltmeter
+      voltmeter(); 
+      break; 
+    case 1: // resistance
+      resistance(); 
+      break; 
+    case 2: // continuity
+      continuity(); 
+      break; 
+    default: // no mode
+      digitalWrite(8, HIGH); 
+      lcd.setCursor(0,0); 
+      lcd.print("Select a mode"); 
+      break; 
+  } 
+  Serial.println("MODE:"); 
+  Serial.println(mode); 
+} 
+
+// Functions for each mode
+void continuity() { 
+  int connected = digitalRead(9); 
+  lcd.clear(); 
+  lcd.setCursor(0,0); 
+  lcd.print("CONTINUITY"); 
+  if (connected == LOW) { 
+    lcd.setCursor(0,1); 
+    lcd.print("CONNECTED"); 
+  } 
+  delay(1000); 
+} 
+
+void resistance() { 
+  lcd.clear(); 
+  long sum = 0; 
+  for(int i=0;i<10;i++){ 
+    sum += analogRead(A5); 
+  } 
+  rRaw = sum / 10; 
+  float vcc = 5; 
+  if (rRaw > 0) { 
+    R2 = ((R1 * (1023.0 / rRaw - 1.0) - 15.0) / 1.1437); 
+    if (rRaw <= 82) R2 += 10; 
+    if (R2 >= 1000) { 
+      R2 /= 1000; 
+      label = ((int)R2 == 1) ? " kOhm" : " kOhms"; 
+    } else { 
+      label = ((int)R2 == 1) ? " Ohm" : " Ohms"; 
+    } 
+    lcd.setCursor(0,0); 
+    lcd.print("RESISTANCE: "); 
+    lcd.setCursor(0,1); 
+    lcd.print((int)R2); 
+    lcd.print(label); 
+  } 
+  delay(1000); 
+} 
+
+void voltmeter() { 
+  lcd.clear(); 
+  lcd.print("VOLTAGE:"); 
+  voltageraw = analogRead(A0); 
+  vlt = (voltageraw * (5.0 /1023.0) * (118.0 / 18.0) + 1.0); 
+  if (voltageraw == 0) { 
+    vlt = 0; 
+    value = "V"; 
+  } else if (vlt < 1) { 
+    value = "V"; 
+  } else { 
+    vlt *= 1000; 
+    value = "mV"; 
+  } 
+  if (vlt < 31.0) { 
+    lcd.setCursor(0,1);
+    lcd.print((int)vlt);
+    lcd.print(value);
+  } else {
+    lcd.setCursor(0,1);
+    lcd.print("TOO HIGH");
+  }
+  delay(1000);
+}
+  </pre>
+
+  <h2>Testing Each Mode</h2>
+  <ul>
+    <li>Press button 13 to test the Voltmeter mode.</li>
+    <li>Press button 12 to test Resistance mode.</li>
+    <li>Press button 11 to test Continuity mode.</li>
+    <li>Check the LCD and Serial Monitor to see readings and debug info.</li>
+  </ul>
+
+</div>

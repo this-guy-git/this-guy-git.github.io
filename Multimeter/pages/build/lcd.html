@@ -1,0 +1,55 @@
+<div style="color: #d4d4d4; text-align: left; padding: 20px;">
+
+  <h1 style="color: #00ffcc;">LCD Display</h1>
+
+  <p>
+    The LCD 16×2 display is used to show your multimeter readings clearly. 
+    It has 16 columns and 2 rows of characters, enough to show voltage, current, or resistance values.
+  </p>
+
+  <h2>Purpose</h2>
+  <ul>
+    <li>Shows real-time measurement values.</li>
+    <li>Makes it easier to read results without connecting to a computer.</li>
+    <li>Displays prompts or mode selections when using pushbuttons.</li>
+  </ul>
+
+  <h2>Wiring Basics</h2>
+  <p>For this guide, a <strong>non-I2C LCD</strong> will be used, which requires more wires:</p>
+  <ul>
+    <li>Connect 12 pins from the Arduino to the LCD (8 data pins + RS, E, RW, VCC, GND as needed).</li>
+    <li>Always connect GND and VCC first to power the LCD correctly.</li>
+    <li>Adjust the contrast with a potentiometer if the characters are faint.</li>
+  </ul>
+
+  <a style="cursor: zoom-in;" target="_blank" href="pages/schematics/LCD.png">
+    <img style="max-width: 80%; height: auto;" src="pages/schematics/LCD.png">
+  </a>
+
+  <h2>Test Code</h2>
+  <p>Upload this to your Arduino to check if the LCD is working:</p>
+  <pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // RS, E, D4, D5, D6, D7
+
+void setup() {
+  lcd.begin(16, 2);          // set up the LCD's number of columns and rows
+  lcd.print("Hello World!"); // print a test message
+}
+
+void loop() {
+  lcd.setCursor(0, 1);       // move to the second line
+  lcd.print(millis() / 1000); // display seconds since reset
+}
+  </pre>
+
+  <h2>Tips</h2>
+  <ul>
+    <li>Test your LCD in Tinkercad first to make sure it works before wiring physically.</li>
+    <li>Use the <strong>LiquidCrystal</strong> library in Arduino IDE to simplify coding for a non-I2C LCD.</li>
+    <li>If you see garbage characters, check wiring and contrast adjustment.</li>
+  </ul>
+
+</div>

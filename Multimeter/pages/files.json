@@ -21,7 +21,8 @@
     "code.cpp": "schematics/code.cpp",
     "continuity.png": "schematics/continuity.png",
     "voltage.png": "schematics/voltage.png",
-    "resistance.png": "schematics/resistance.png"
+    "resistance.png": "schematics/resistance.png",
+    "lcd.png": "schematics/LCD.png"
   },
   "addons": {}
 }

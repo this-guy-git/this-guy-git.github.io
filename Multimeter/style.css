@@ -2,6 +2,27 @@
   --sidebar-icon-size: 30px;
 }
 
+#lightdark {
+  filter: invert(100%) brightness(200%);
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  transform: none;
+  width: 32px;
+  height: 32px;
+  z-index: 4002;
+  display: block;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-size: cover ;
+  background-image: url("images/lightdark/moon.svg");
+}
+#lightdark:hover {
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-image: url("images/lightdark/moon-stars-fill.svg")
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -124,6 +145,7 @@ a:hover {
   display: flex;
   align-items: center;
   padding-left: 10px;
+  padding-right: 54px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   z-index: 1000;
 }

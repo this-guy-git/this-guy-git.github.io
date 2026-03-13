@@ -22,7 +22,10 @@
     "continuity.png": "schematics/continuity.png",
     "voltage.png": "schematics/voltage.png",
     "resistance.png": "schematics/resistance.png",
-    "lcd.png": "schematics/LCD.png"
+    "lcd.png": "schematics/LCD.png",
+    "circuit.png": "schematics/circuit.png"
   },
-  "addons": {}
+  "addons": {
+
+  }
 }

@@ -1,9 +1,67 @@
 :root {
   --sidebar-icon-size: 30px;
+  --theme-transition: 240ms ease;
+
+  /* Dark theme (default) */
+  --bg: #121212;
+  --color: #e0e0e0;
+  --link-color: #00ffcc;
+  --link-hover: #41b9a1;
+  --sidebar-bg: #1e1e1e;
+  --sidebar-border: #333;
+  --sidebar-heading: #fff;
+  --sidebar-hover: #333;
+  --sidebar-tree-line: #555;
+  --taskbar-bg: #1a1a1a;
+  --taskbar-color: #fff;
+  --taskbar-border: #333;
+  --window-bg: rgba(30, 30, 30, 0.6);
+  --window-border: rgba(255,255,255,0.15);
+  --window-shadow: rgba(0,0,0,0.5);
+  --window-header-bg: rgba(40,40,40,0.7);
+  --window-color: #e0e0e0;
+  --code-bg: #1f1f1f;
+  --code-color: #d8d8d8;
+  --code-border: #2f2f2f;
+  --warning-color: #ff7c7c;
+  --scrollbar-thumb: #888;
+  --scrollbar-track: #222;
+  --icon-filter: invert(100%) brightness(200%);
+  --lightdark-icon: url("images/lightdark/moon.svg");
+  --lightdark-icon-hover: url("images/lightdark/moon-stars-fill.svg");
+}
+
+body[data-theme="light"] {
+  --bg: #f0ebe0;
+  --color: #3d3830;
+  --link-color: #2e7d6e;
+  --link-hover: #1e5c50;
+  --sidebar-bg: #e6dfd0;
+  --sidebar-border: #c5bbaa;
+  --sidebar-heading: #3d3830;
+  --sidebar-hover: #d4ccba;
+  --sidebar-tree-line: #b0a88e;
+  --taskbar-bg: #ddd6c5;
+  --taskbar-color: #3d3830;
+  --taskbar-border: #bfb8a6;
+  --window-bg: rgba(240, 235, 224, 0.82);
+  --window-border: rgba(80, 70, 55, 0.18);
+  --window-shadow: rgba(60, 50, 38, 0.14);
+  --window-header-bg: rgba(228, 221, 208, 0.9);
+  --window-color: #3d3830;
+  --code-bg: #e8dfcf;
+  --code-color: #3b352c;
+  --code-border: #cfc4b2;
+  --warning-color: #9b5a49;
+  --scrollbar-thumb: #b5ac97;
+  --scrollbar-track: #d8d1c0;
+  --icon-filter: invert(20%) sepia(10%) saturate(500%) hue-rotate(10deg) brightness(60%);
+  --lightdark-icon: url("images/lightdark/brightness-high.svg");
+  --lightdark-icon-hover: url("images/lightdark/brightness-high-fill.svg");
 }
 
 #lightdark {
-  filter: invert(100%) brightness(200%);
+  filter: var(--icon-filter);
   position: fixed;
   top: 12px;
   right: 12px;
@@ -15,46 +73,55 @@
   padding: 6px;
   border-radius: 10px;
   cursor: pointer;
-  background-size: cover ;
-  background-image: url("images/lightdark/moon.svg");
+  background-size: cover;
+  background-image: var(--lightdark-icon);
+  transition: transform var(--theme-transition), filter var(--theme-transition), background-image 0.2s ease;
 }
 #lightdark:hover {
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-image: url("images/lightdark/moon-stars-fill.svg")
+  background-size: cover;
+  background-image: var(--lightdark-icon-hover);
 }
+
+body[data-theme="light"] #lightdark {
+  transform: rotate(180deg);
+}
+
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   height: 100vh;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: var(--bg);
+  color: var(--color);
   display: flex;
   overflow: hidden;
+  transition: background-color var(--theme-transition), color var(--theme-transition);
 }
 
 a {
-  color: #00ffcc;
+  color: var(--link-color);
   text-decoration: none;
-  transition-duration: 0.3s;
+  transition: color var(--theme-transition), text-decoration-color var(--theme-transition);
 }
 a:hover {
-  color: #41b9a1;
-  text-decoration: wavy underline #41b9a1;
+  color: var(--link-hover);
+  text-decoration: wavy underline var(--link-hover);
 }
 
 #sidebar {
   width: 240px;
-  background-color: #1e1e1e;
-  border-right: 1px solid #333;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
   padding: 10px;
   overflow-y: auto;
   z-index: 1500;
+  transition: background-color var(--theme-transition), border-color var(--theme-transition);
 }
 
 #sidebar h3 {
   margin-top: 0;
-  color: #fff;
+  color: var(--sidebar-heading);
+  transition: color var(--theme-transition);
 }
 
 /* Sidebar list */
@@ -77,11 +144,12 @@ a:hover {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
+  transition: background-color var(--theme-transition), color var(--theme-transition);
 }
 
 #sidebar li > span:hover {
   cursor: pointer;
-  background-color: #333;
+  background-color: var(--sidebar-hover);
   border-radius: 4px;
   padding: 2px 4px;
 }
@@ -94,7 +162,8 @@ a:hover {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: #555;
+  background: var(--sidebar-tree-line);
+  transition: background-color var(--theme-transition);
 }
 
 
@@ -106,7 +175,8 @@ a:hover {
   bottom: 0;
   width: 8px;
   height: 1px;
-  background: #555;
+  background: var(--sidebar-tree-line);
+  transition: background-color var(--theme-transition);
 }
 
 /* Nested ul appears below */
@@ -130,24 +200,26 @@ a:hover {
   width: var(--sidebar-icon-size);
   height: var(--sidebar-icon-size);
   object-fit: contain;
-  filter: invert(100%) brightness(200%);
+  filter: var(--icon-filter);
+  transition: filter var(--theme-transition);
 }
 
 #taskbar {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--taskbar-border);
   position: fixed;
   top: 0;
   left: 0;
   height: 59px;
   width: 100%;
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--taskbar-bg);
+  color: var(--taskbar-color);
   display: flex;
   align-items: center;
   padding-left: 10px;
   padding-right: 54px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   z-index: 1000;
+  transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition);
 }
 
 #desktop-overlay {
@@ -164,11 +236,11 @@ a:hover {
 /* Remove outer scrollbar from window */
 .window {
   position: absolute;
-  background: rgba(30, 30, 30, 0.6);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: var(--window-bg);
+  border: 1px solid var(--window-border);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px var(--window-shadow);
   resize: both;
   overflow: hidden;
   min-width: 300px;
@@ -176,12 +248,13 @@ a:hover {
   pointer-events: auto;
   z-index: 3001;
   border-radius: 15px;
-  color: #e0e0e0;
+  color: var(--window-color);
   margin-top: 30px;
+  transition: background-color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition), color var(--theme-transition);
 }
 
 .window-header {
-  background: rgba(40,40,40,0.7);
+  background: var(--window-header-bg);
   padding: 6px 12px;
   display: flex;
   justify-content: space-between;
@@ -189,17 +262,14 @@ a:hover {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   cursor: move;
+  transition: background-color var(--theme-transition);
 }
 
 .windb {
   width: 32px;
   height: 32px;
-  filter: invert(100%) brightness(200%);
-}
-
-.windb:hover {
-  background-color: #f5f5f5;
-  border-radius: 12px;
+  filter: var(--icon-filter);
+  transition: filter var(--theme-transition), background-color var(--theme-transition);
 }
 
 .window-controls span {
@@ -207,23 +277,64 @@ a:hover {
   cursor: pointer;
 }
 
-
-
 .window-content {
   padding: 10px;
   max-height: calc(100% - 30px);
   overflow: auto;
   scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #888 #222; /* Firefox */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); /* Firefox */
+  transition: scrollbar-color var(--theme-transition);
+}
+
+.window-content h1,
+.window-content h2,
+.window-content h3,
+.window-content p,
+.window-content li,
+.window-content span {
+  color: var(--window-color);
+}
+
+.window-content pre {
+  background-color: var(--code-bg) !important;
+  color: var(--code-color);
+  border: 1px solid var(--code-border);
+}
+
+.window-content .warning,
+.window-content p.warning {
+  color: var(--warning-color) !important;
 }
 .window-content::-webkit-scrollbar {
   width: 6px;
-  background: #222;
+  background: var(--scrollbar-track);
 }
 .window-content::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
+  transition: background-color var(--theme-transition);
 }
 .window-content::-webkit-scrollbar-track {
-  background: #222;
+  background: var(--scrollbar-track);
+  transition: background-color var(--theme-transition);
+}
+
+.social {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  z-index: 4002;
+}
+.social-icon {
+  width: 32px;
+  height: 32px;
+  filter: var(--icon-filter);
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

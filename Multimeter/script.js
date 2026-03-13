@@ -2,6 +2,19 @@ let zIndexCounter = 3001;
 const windows = [];
 const sidebar = document.getElementById('sidebar');
 
+// ── Theme toggle ──────────────────────────────────────────────
+(function initTheme() {
+  const saved = localStorage.getItem('theme') || 'dark';
+  document.body.dataset.theme = saved;
+})();
+
+document.getElementById('lightdark').addEventListener('click', () => {
+  const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.body.dataset.theme = next;
+  localStorage.setItem('theme', next);
+});
+// ─────────────────────────────────────────────────────────────
+
 function renderSidebarIcons() {
   const items = document.querySelectorAll('#sidebar li');
   items.forEach(li => {
@@ -55,15 +68,24 @@ function openWindow(url, title) {
   // Check file type
   const ext = url.split('.').pop().toLowerCase();
   if (ext === 'png' || ext === 'jpg' || ext === 'jpeg' || ext === 'gif') {
-    // Display image and fit it inside the window content
+    // Display image and allow click-to-open full image (zoom-in behavior)
     const img = document.createElement('img');
     img.src = 'pages/' + url;
     img.style.width = '100%';
     img.style.height = '100%';
     img.style.objectFit = 'contain';
     img.style.display = 'block';
+    img.style.cursor = 'zoom-in';
+
+    const zoomLink = document.createElement('a');
+    zoomLink.href = img.src;
+    zoomLink.target = '_blank';
+    zoomLink.rel = 'noopener noreferrer';
+    zoomLink.title = 'Open image in a new tab';
+    zoomLink.appendChild(img);
+
     content.innerHTML = '';
-    content.appendChild(img);
+    content.appendChild(zoomLink);
   } else if (ext === 'cpp' || ext === 'txt') {
     // Load text content
     content.innerHTML = '<p>Loading...</p>';

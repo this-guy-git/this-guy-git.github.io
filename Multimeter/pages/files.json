@@ -26,6 +26,6 @@
     "circuit.png": "schematics/circuit.png"
   },
   "addons": {
-
+    "printcase.html": "addons/printedcase.html"
   }
 }

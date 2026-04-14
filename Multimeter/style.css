@@ -323,7 +323,7 @@ a:hover {
   position: fixed;
   bottom: 12px;
   right: 12px;
-  z-index: 4002;
+  z-index: 2000;
 }
 .social p {
   position: fixed;
@@ -331,6 +331,7 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  z-index: 2000;
   color: var(--color);
   opacity: 0.6;
   margin: 0;

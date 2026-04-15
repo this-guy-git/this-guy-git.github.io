@@ -338,6 +338,10 @@ a:hover {
   padding: 0;
   transition: color var(--theme-transition), opacity var(--theme-transition);
 }
+.help {
+  transition: color var(--theme-transition);
+  opacity: var(--theme-transition);
+}
 .social-icon {
   width: 32px;
   height: 32px;

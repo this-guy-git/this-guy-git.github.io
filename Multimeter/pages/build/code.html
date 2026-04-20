@@ -46,7 +46,7 @@ void loop() {
   lcd.setCursor(0,0);
   lcd.print("VOLTAGE:");
   lcd.setCursor(0,1);
-  if (vlt < 31.0) lcd.print((int)vlt + "V");
+  if (vlt &lt; 31.0) lcd.print((int)vlt + "V");
   else lcd.print("TOO HIGH");
   delay(1000);
 }
@@ -70,7 +70,7 @@ void setup() {
 
 void loop() {
   long sum = 0;
-  for(int i=0;i<10;i++) sum += analogRead(A5);
+  for(int i=0;i&lt;10;i++) sum += analogRead(A5);
   int rRaw = sum / 10;
   float R2 = ((R1 * (1023.0 / rRaw - 1.0) - 15.0) / 1.1437);
 
@@ -226,7 +226,7 @@ void resistance()
   lcd.clear();
   long sum = 0;
 
-  for(int i=0;i<10;i++){
+  for(int i=0;i&lt;10;i++){
   	sum += analogRead(A5);
   }
 
@@ -237,7 +237,7 @@ void resistance()
   if (rRaw > 0) {
     R2 = ((R1 * (1023.0 / rRaw - 1.0) - 15.0) / 1.1437) + 1.0;
     // very bad fix but it works
-    if (rRaw <= 82) {
+    if (rRaw &lt;= 82) {
     	R2 += 10;
     }
     if (R2 >= 1000) {
@@ -279,7 +279,7 @@ void voltmeter()
   if (voltageraw == 0) {
     if (voltageraw == 0) {
     	vlt = 0;
-    } if (vlt < 1) {
+    } if (vlt &lt; 1) {
       value = "V";
     } else {
     	vlt *= 1000;
@@ -288,7 +288,7 @@ void voltmeter()
   } else {
     value = "V";
   }
-  if (vltcmp < 31.0) {
+  if (vltcmp &lt; 31.0) {
     lcd.setCursor(0,1);
   	lcd.print((int)vlt);
   	lcd.print(value);

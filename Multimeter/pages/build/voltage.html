@@ -23,15 +23,44 @@
   <a style="cursor: zoom-in;" target="_blank" href="pages/schematics/voltage.png">
     <img style="max-width: 90%; height: auto;" src="pages/schematics/voltage.png">
   </a>
-  <p class="help">Click on the Image to zoom in.</p>
+<p class="help"><em>Click on the Image to zoom in.</em></p>
 
   <p style="font-style: italic;">
     The diagram shows how to connect the Arduino, resistors, and LCD to measure voltage. 
     Use this setup to test DC voltage safely.
   </p>
 
+<h2>Testing</h2>
+Upload this code to test the Voltmeter.
+<pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+#include &lt;LiquidCrystal.h&gt;
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);
+}
+
+void loop() {
+  int voltageraw = analogRead(A0);
+  float vlt = voltageraw * (5.0 / 1023.0) * (118.0 / 18.0) + 1.0;
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("VOLTAGE:");
+  lcd.setCursor(0,1);
+  if (vlt &lt; 31.0) lcd.print((int)vlt + "V");
+  else lcd.print("TOO HIGH");
+  delay(1000);
+}
+</pre>
+
+Then you can touch the leads to any battery or the arduino's 5v and ground line, the value should show on the LCD.
+
+</div>
+
   <p style="color: var(--warning-color); font-weight: bold;">
     ⚠️ Warning: Do not try to measure voltage with reverse polarity (Leads in opposite directions). This can damage the Arduino and components.
   </p>
-
+<br>
+<br>
 </div>

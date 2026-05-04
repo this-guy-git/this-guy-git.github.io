@@ -1,0 +1,32 @@
+<h1>Speaker</h1>
+In real multimeters, they have a speaker that plays when the circuit has continuity.
+This addon adds a speaker that does the same thing.
+
+<a style="cursor: zoom-in;" target="_blank" href="/Multimeter/pages/schematics/speaker.png">
+  <img style="max-width: 80%; height: auto;" src="/Multimeter/pages/schematics/speaker.png">
+</a>
+<p class="help"><em>Click on the Image to zoom in.</em></p>
+
+Change the continuity function to this:
+<pre style="background-color: #1e1e1e; padding: 10px; border-radius: 5px; overflow-x: auto;">
+void continuity()
+{
+  int connected = digitalRead(9);
+
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("CONTINUITY");
+
+  if (connected == LOW)
+  {
+    lcd.setCursor(0,1);
+    lcd.print("CONNECTED");
+    tone(10, 3000);
+  }
+  if (connected == HIGH) {
+    noTone(10);
+  }
+}
+</pre>
+
+<br>

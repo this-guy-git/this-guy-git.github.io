@@ -23,9 +23,12 @@
     "voltage.png": "schematics/voltage.png",
     "resistance.png": "schematics/resistance.png",
     "lcd.png": "schematics/LCD.png",
-    "circuit.png": "schematics/circuit.png"
+    "circuit.png": "schematics/circuit.png",
+    "speaker.png": "schematics/speaker.png",
+    "speaker.cpp": "schematics/speaker.cpp"
   },
   "addons": {
-    "printcase.html": "addons/printedcase.html"
+    "printcase.html": "addons/printedcase.html",
+    "speaker.html": "addons/speaker.html"
   }
 }
